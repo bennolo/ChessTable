@@ -41,7 +41,7 @@ import javafx.util.Duration;
  */
 public class Tournament_V2 extends Application {
     
-    //Test
+    
     
     private final boolean DEBUG = true;
     private TextField tf_club;
