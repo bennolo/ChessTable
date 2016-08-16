@@ -1,0 +1,11 @@
+# build files
+build.*
+
+# dist files
+dist.*
+
+.git
+manifest.mf
+nbproject.*
+test.*
+
