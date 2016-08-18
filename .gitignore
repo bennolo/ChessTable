@@ -1,5 +1,3 @@
-# build files
-build.*
 
 # dist files
 dist.*
@@ -9,3 +7,4 @@ manifest.mf
 nbproject.*
 test.*
 
+/dist/
