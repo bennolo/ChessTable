@@ -24,6 +24,7 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import java.util.Comparator;
+import java.util.stream.Stream;
 import javafx.animation.FadeTransition;
 import javafx.geometry.Insets;
 import javafx.scene.control.Tooltip;
@@ -698,15 +699,14 @@ public class Tournament_V2 extends Application {
     }
 
     public int numberOfPlayers(){
-        int nOfP = 20;
-        for (int i = 1; i <= 20; i++){
-            if (textList.get(i).isEmpty()){
-                nOfP -= 1;
-            }
-        }
-        return nOfP;
+        int nOfP = 21;
+        long textListCount = textList.stream()
+                .filter((i) -> i.isEmpty())
+                .count();
+        
+        return nOfP - (int)textListCount;
     }
-
+   
     public void fadeIn(Button button){
         FadeTransition ft = new FadeTransition(Duration.millis(2000), button);
         ft.setFromValue(0.0);
