@@ -587,6 +587,9 @@ public class Tournament_V2 extends Application {
             if (resultList[row][i] == 0.5){
                 remis += 1;
             }
+            
+            // here are the fault!?
+            
             if (resultList[row][i] == 0.0){
                 loss += 1;
             }
@@ -594,7 +597,8 @@ public class Tournament_V2 extends Application {
         }
         result[0] = win;
         result[1] = remis;
-        result[2] = loss-1;
+        // ore here 
+        result[2] = loss-1;  // this must be ????
         return result;
     }
 
@@ -732,7 +736,7 @@ public class Tournament_V2 extends Application {
                 }
                 rr.setR1(winRemisLoss[0]);
                 rr.setR2(winRemisLoss[1]);
-                rr.setR3(numberOfPlayers()-1 - winRemisLoss[0] - winRemisLoss[1]);
+                rr.setR3(numberOfPlayers()-1 - winRemisLoss[0] - winRemisLoss[1]); // can be all so here
                 rr.setPointsRow(getSumPointsRows(i));
                 rr.setSonnebornBerger(labelRankList[i].getSb_value());
                 if (!"".equals(textList.get(i))){  
@@ -740,6 +744,13 @@ public class Tournament_V2 extends Application {
                 }
                 rr_list.sort(comparatorRR_byNumber);
             }
+    }
+    
+    public int notYetPlayedGamesRow(int sumPointsPlayedGames){
+        int notYetPlayed = 0;
+        
+        return notYetPlayed;
+        
     }
 
 }
