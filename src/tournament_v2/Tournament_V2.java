@@ -5,7 +5,6 @@
  */
 package tournament_v2;
 
-import static java.lang.Integer.parseInt;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +23,6 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import java.util.Comparator;
-import java.util.stream.Stream;
 import javafx.animation.FadeTransition;
 import javafx.geometry.Insets;
 import javafx.scene.control.Tooltip;
@@ -34,8 +32,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import static java.lang.Integer.parseInt;
-import static java.lang.Integer.parseInt;
 import static java.lang.Integer.parseInt;
 
 
@@ -738,11 +734,13 @@ public class Tournament_V2 extends Application implements My_I{
                     rr_list.add(rr);
                 }
                 rr_list.sort(comparatorRR_byNumber);
+                
+                System.out.println("noYetPlayedGamesRow" + notYetPlayedGamesRow(i));
             }
     }
     
     public int notYetPlayedGamesRow(int sumPointsPlayedGames){
-        int notYetPlayed = 0;
+        int notYetPlayed = (My_I.numberOfPlayers(textList)-1 * My_I.numberOfPlayers(textList)) - sumPointsPlayedGames;
         
         return notYetPlayed;
         
