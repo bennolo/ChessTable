@@ -34,13 +34,16 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import static java.lang.Integer.parseInt;
+import static java.lang.Integer.parseInt;
+import static java.lang.Integer.parseInt;
 
 
 /**
  *
  * @author benno
  */
-public class Tournament_V2 extends Application implements MyInterface{
+public class Tournament_V2 extends Application implements My_I{
     
     
     
@@ -724,11 +727,11 @@ public class Tournament_V2 extends Application implements MyInterface{
                 try{
                 rr.setPlayerRank((int) parseInt(labelRank[i].getText().trim()));
                 } catch (Exception e){
-                    rr.setPlayerRank(MyInterface.test(textList));
+                    rr.setPlayerRank(My_I.numberOfPlayers(textList));
                 }
                 rr.setR1(winRemisLoss[0]);
                 rr.setR2(winRemisLoss[1]);
-                rr.setR3(MyInterface.test(textList)-1 - winRemisLoss[0] - winRemisLoss[1]); // can be all so here
+                rr.setR3(My_I.numberOfPlayers(textList)-1 - winRemisLoss[0] - winRemisLoss[1]); // can be all so here
                 rr.setPointsRow(getSumPointsRows(i));
                 rr.setSonnebornBerger(labelRankList[i].getSb_value());
                 if (!"".equals(textList.get(i))){  
