@@ -8,11 +8,6 @@ package tournament_v2;
 import java.util.List;
 
 
-
-/**
- *
- * @author benno
- */
 public interface My_I {
     
     static int numberOfPlayers  (List<String> l){
