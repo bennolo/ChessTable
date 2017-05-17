@@ -40,7 +40,7 @@ import javafx.util.Duration;
  *
  * @author benno
  */
-public class Tournament_V2 extends Application {
+public class Tournament_V2 extends Application implements MyInterface{
     
     
     
@@ -698,14 +698,6 @@ public class Tournament_V2 extends Application {
         }
     }
 
-    public int numberOfPlayers(){
-        int nOfP = 21;
-        long textListCount = textList.stream()
-                .filter((i) -> i.isEmpty())
-                .count();
-        
-        return nOfP - (int)textListCount;
-    }
    
     public void fadeIn(Button button){
         FadeTransition ft = new FadeTransition(Duration.millis(2000), button);
@@ -732,11 +724,11 @@ public class Tournament_V2 extends Application {
                 try{
                 rr.setPlayerRank((int) parseInt(labelRank[i].getText().trim()));
                 } catch (Exception e){
-                    rr.setPlayerRank(numberOfPlayers());
+                    rr.setPlayerRank(MyInterface.test(textList));
                 }
                 rr.setR1(winRemisLoss[0]);
                 rr.setR2(winRemisLoss[1]);
-                rr.setR3(numberOfPlayers()-1 - winRemisLoss[0] - winRemisLoss[1]); // can be all so here
+                rr.setR3(MyInterface.test(textList)-1 - winRemisLoss[0] - winRemisLoss[1]); // can be all so here
                 rr.setPointsRow(getSumPointsRows(i));
                 rr.setSonnebornBerger(labelRankList[i].getSb_value());
                 if (!"".equals(textList.get(i))){  
