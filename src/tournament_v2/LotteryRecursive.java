@@ -34,8 +34,8 @@ public class LotteryRecursive {
     private VBox vb1;
     private VBox vb2;
     private HBox hb_bottom;
-    private List<Integer> nonEmpty = new ArrayList<>();
-    private List<Integer> fromTop = new ArrayList<>();
+    private final List<Integer> nonEmpty = new ArrayList<>();
+    private final List<Integer> fromTop = new ArrayList<>();
 
     public LotteryRecursive() {
     }
