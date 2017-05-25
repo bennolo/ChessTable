@@ -226,16 +226,7 @@ public class Tournament_V2 extends Application implements My_I{
 
 
         //Set black buttons
-        Integer[][] intList = new Integer[21][21];
-        int k = 1;
-        int l = 1;
-        while (k <= 20 || l <= 20){
-            Btn[k][l].setStyle("-fx-background-color: black;");
-            Btn[k][l].setTextFill(Color.BLACK);
-            Btn[k][l].setDisable(true);
-            k++;
-            l++;
-        }
+        fillButtons();
 
 
         TextField[] textField = new TextField[21];
